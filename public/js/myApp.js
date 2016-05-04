@@ -2,7 +2,6 @@
 
 (function() {
 
-
 //creating uses a 2nd array argument to import dependencies
 angular.module('myApp', []); //creates a module named myApp
 
@@ -14,9 +13,9 @@ myApp
     //config
 
   })
-  .run(function($rootScope, APP_VERSION) {
+  .run(['$rootScope', 'APP_VERSION', function($rootScope, APP_VERSION) {
     //initialize
     $rootScope.appVersion = APP_VERSION;
 
-  });
+  }]);
 })();
