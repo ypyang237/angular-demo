@@ -39,9 +39,16 @@
     </div>
 
     <div>
-      <p>
-        BookService {{ books }}
-      </p>
+      <h3>BookService</h3>
+        <ul ng-repeat="book in books">
+          <li>
+          Title: {{ book.title }}
+          </li>
+          <li>
+            Author: {{ book.author }}
+          </li>
+        </ul>
+
     </div>
 
 
