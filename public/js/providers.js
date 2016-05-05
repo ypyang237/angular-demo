@@ -11,9 +11,9 @@
       };
 
       //injectable service step
-      this.$get = ['$http', function($http) { //this is the 'factory'
+      this.$get = ['$http', function($http) { //this is the 'class' or 'Service'
 
-        return {
+        return { //like a factory
           getMovies: function() {
             return $http.get(endpoint);
           }
