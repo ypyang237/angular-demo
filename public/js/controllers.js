@@ -22,7 +22,10 @@
 
       $scope.BookService = BookService;
 
-      console.log(Movies.getMovies());
+      $scope.movies = [];
+      Movies.getMovies().then(function(response) {
+        $scope.movies = response.data;
+      });
 
     }]);
 
