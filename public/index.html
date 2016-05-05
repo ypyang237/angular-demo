@@ -5,94 +5,26 @@
   <title>Angular Tutorial</title>
 </head>
 <body ng-app="myApp">
-  <h1>{{ "Hello" + " Angular" }}</h1>
-  <div>
-    {{2 + 3}}
-  </div>
 
-      <h3 class="version">
-        {{appVersion}}
-      </h3>
-
-  <div ng-controller="myController">
-
-  {{myFirstName}}
-
-    <div>
-      <input type="text" ng-model="myModel">
-    </div>
-
-    <div>
-      {{ myModel}}
-    </div>
-
-    <div>
-      <h3>
-        {{ mainCharacter }}
-      </h3>
-    </div>
-
-    <div>
-      <h3>
-        Character Version {{ characterVersion }}
-      </h3>
-    </div>
-
-    <div>
-      <h3>BookService</h3>
-      <input type="text" ng-model="searchBookFilter" placeholder="search books">
-        <ul ng-repeat="book in BookService.getBooks() | filter:searchBookFilter | orderBy: 'title'">
-          <li>
-          Title: {{ book.title }}
-          </li>
-          <li>
-            Author: {{ book.author }}
-          </li>
-        </ul>
-        <fieldset>
-          <div>
-            <label for="Title">Title</label>
-            <input type="text" id="Title" ng-model="newBook.title" />
-          </div>
-
-          <div>
-            <label for="Author">Author</label>
-            <input type="text" id="Author" ng-model="newBook.author" />
-          </div>
-
-          <div>
-            <button type="button" ng-click="BookService.addBook(newBook)">Add Book</button>
-          </div>
-
-        </fieldset>
-    </div>
-
-
-    <div>
-      <h2>Movies</h2>
-      <ul ng-repeat="movie in movies| beforeYearFilter:1983 |orderBy: '-year'">
-        <li>
-          Title: {{ movie.title}}
-        </li>
-        <li>
-          Year: {{ movie.year}}
-        </li>
-      </ul>
-    </div>
+  <div ng-view></div>
+  <!-- this line above is important for the rendering of the default.html in views -->
+  <!-- routeProvider renders views in here -->
 
 
 
-  </div>
 
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular-route.min.js"></script>
   <script src="./js/myApp.js"></script>
-  <script src="./js/controllers.js"></script>
   <script src="./js/values.js"></script>
   <script src="./js/constants.js"></script>
   <script src="./js/factories.js"></script>
   <script src="./js/services.js"></script>
   <script src="./js/providers.js"></script>
   <script src="./js/filter.js"></script>
+  <script src="./js/controllers/books.js"></script>
+  <script src="./js/controllers/movies.js"></script>
+  <script src="./js/controllers/other.js"></script>
 
 </body>
 </html>
