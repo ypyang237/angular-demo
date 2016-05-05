@@ -42,7 +42,23 @@
       }, null);
     };
 
+    this.nextId = function() {
+      return this.books.reduce(function(highest, book) {
+        return Math.max(book.id, highest);
+      }, 0) + 1;
+    };
 
+    this.addBook = function(book) {
+      this.books.push( Object.assign({
+            id: this.nextId()
+          }, book)
+        );
+      Object.assign(book, {
+        title: '',
+        author: ''
+      });
+
+    };
 
   }
 
