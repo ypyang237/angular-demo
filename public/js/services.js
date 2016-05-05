@@ -49,7 +49,7 @@
     };
 
     this.addBook = function(book) {
-      this.books.push( Object.assign({
+      this.books.push(Object.assign({
             id: this.nextId()
           }, book)
         );

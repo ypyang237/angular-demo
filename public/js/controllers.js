@@ -7,7 +7,8 @@
       'MainCharacter',
       'CharacterVersionFactory',
       'BookService',
-      function($scope, MainCharacter, CharacterVersionFactory, BookService) {
+      'Movies',
+      function($scope, MainCharacter, CharacterVersionFactory, BookService, Movies) {
       //attach model to scope
       $scope.myFirstName = "Pam";
       //applies a new model to the scope
@@ -20,6 +21,8 @@
       $scope.characterVersion = CharacterVersionFactory;
 
       $scope.BookService = BookService;
+
+      console.log(Movies.getMovies());
 
     }]);
 

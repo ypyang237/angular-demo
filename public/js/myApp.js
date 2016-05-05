@@ -9,10 +9,11 @@ angular.module('myApp', []); //creates a module named myApp
 var myApp = angular.module('myApp'); //retrieve the module named myApp
 
 myApp
-  .config(function() {
-    //config
+  .config(['MoviesProvider', function(MoviesProvider){
+    MoviesProvider.setEndpoint('/api/movies');
+  }])
 
-  })
+
   .run(['$rootScope', 'APP_VERSION', function($rootScope, APP_VERSION) {
     //initialize
     $rootScope.appVersion = APP_VERSION;
